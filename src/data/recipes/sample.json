@@ -1,0 +1,149 @@
+[
+  {
+    "id": "lemon-herb-chicken",
+    "title": "Lemon Herb Chicken",
+    "description": "Bright, easy sheet-pan dinner with roasted vegetables.",
+    "tags": ["high-protein", "30-min", "mediterranean", "sheet-pan"],
+    "timeMinutes": 35,
+    "servings": 4,
+    "ingredients": [
+      "2 lbs bone-in chicken thighs",
+      "2 lemons",
+      "4 cloves garlic",
+      "2 tbsp olive oil",
+      "1 tsp dried oregano",
+      "1 lb baby potatoes",
+      "1 red onion",
+      "Salt and pepper"
+    ],
+    "steps": [
+      "Heat oven to 425°F.",
+      "Halve potatoes and onion; toss with olive oil, salt, and pepper on a sheet pan.",
+      "Nestle chicken among vegetables. Add garlic, lemon slices, and oregano.",
+      "Roast 30–35 minutes until chicken reaches 165°F."
+    ]
+  },
+  {
+    "id": "salmon-rice-bowl",
+    "title": "Salmon Rice Bowl",
+    "description": "Flaky salmon over rice with cucumber and a quick soy-lime sauce.",
+    "tags": ["high-protein", "30-min", "pescatarian", "bowl"],
+    "timeMinutes": 25,
+    "servings": 2,
+    "ingredients": [
+      "2 salmon fillets",
+      "1 cup cooked rice",
+      "1 cucumber",
+      "2 tbsp soy sauce",
+      "1 tbsp rice vinegar",
+      "1 tsp honey",
+      "1 lime",
+      "Sesame seeds",
+      "Green onion"
+    ],
+    "steps": [
+      "Season salmon with salt and pepper; pan-sear 4 minutes per side.",
+      "Slice cucumber and green onion.",
+      "Whisk soy sauce, vinegar, honey, and lime juice.",
+      "Serve salmon over rice with cucumber; drizzle sauce and top with sesame."
+    ]
+  },
+  {
+    "id": "veggie-pasta-primavera",
+    "title": "Veggie Pasta Primavera",
+    "description": "Colorful weeknight pasta with whatever vegetables are in the fridge.",
+    "tags": ["vegetarian", "30-min", "pasta", "weeknight"],
+    "timeMinutes": 30,
+    "servings": 4,
+    "ingredients": [
+      "12 oz short pasta",
+      "2 cups mixed vegetables (zucchini, bell pepper, cherry tomatoes)",
+      "3 cloves garlic",
+      "3 tbsp olive oil",
+      "1/2 cup parmesan",
+      "Red pepper flakes",
+      "Fresh basil"
+    ],
+    "steps": [
+      "Boil pasta in salted water until al dente; reserve 1 cup pasta water.",
+      "Sauté garlic and vegetables in olive oil until tender.",
+      "Toss pasta with vegetables, parmesan, and pasta water as needed.",
+      "Finish with basil and red pepper flakes."
+    ]
+  },
+  {
+    "id": "turkey-chili",
+    "title": "Weeknight Turkey Chili",
+    "description": "Hearty, make-ahead chili that tastes even better the next day.",
+    "tags": ["high-protein", "make-ahead", "comfort", "one-pot"],
+    "timeMinutes": 45,
+    "servings": 6,
+    "ingredients": [
+      "1 lb ground turkey",
+      "1 yellow onion",
+      "2 cans diced tomatoes",
+      "1 can black beans",
+      "1 can kidney beans",
+      "2 tbsp chili powder",
+      "1 tsp cumin",
+      "2 cups chicken broth",
+      "Salt and pepper"
+    ],
+    "steps": [
+      "Brown turkey with diced onion in a large pot.",
+      "Stir in spices, tomatoes, beans, and broth.",
+      "Simmer 25–30 minutes until thickened.",
+      "Season to taste; serve with toppings of choice."
+    ]
+  },
+  {
+    "id": "shakshuka",
+    "title": "Shakshuka",
+    "description": "Eggs poached in spiced tomato sauce — great for brunch or dinner.",
+    "tags": ["vegetarian", "30-min", "brunch", "one-pan"],
+    "timeMinutes": 30,
+    "servings": 4,
+    "ingredients": [
+      "6 eggs",
+      "1 can crushed tomatoes",
+      "1 red bell pepper",
+      "1 onion",
+      "3 cloves garlic",
+      "1 tsp cumin",
+      "1 tsp paprika",
+      "Feta cheese",
+      "Fresh cilantro",
+      "Crusty bread"
+    ],
+    "steps": [
+      "Sauté onion, pepper, and garlic until soft.",
+      "Add tomatoes, cumin, and paprika; simmer 10 minutes.",
+      "Make wells in the sauce and crack in eggs.",
+      "Cover and cook until whites set; top with feta and cilantro."
+    ]
+  },
+  {
+    "id": "chicken-stir-fry",
+    "title": "Ginger Chicken Stir-Fry",
+    "description": "Fast stir-fry with a savory ginger-garlic sauce.",
+    "tags": ["high-protein", "30-min", "asian-inspired", "weeknight"],
+    "timeMinutes": 20,
+    "servings": 4,
+    "ingredients": [
+      "1.5 lbs chicken breast, sliced",
+      "3 cups mixed stir-fry vegetables",
+      "2 tbsp ginger",
+      "4 cloves garlic",
+      "3 tbsp soy sauce",
+      "1 tbsp sesame oil",
+      "2 tbsp vegetable oil",
+      "Cooked rice"
+    ],
+    "steps": [
+      "Stir-fry chicken in vegetable oil until nearly cooked; set aside.",
+      "Sauté ginger, garlic, and vegetables until crisp-tender.",
+      "Return chicken; add soy sauce and sesame oil.",
+      "Serve over rice."
+    ]
+  }
+]

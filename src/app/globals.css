@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cream: #faf6f0;
+  --color-terracotta: #c45c3e;
+  --color-terracotta-dark: #a84a30;
+  --color-sage: #6b7f6a;
+  --font-serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+}
+
+body {
+  background: linear-gradient(180deg, #faf6f0 0%, #f3ece3 100%);
+  color: #1c1917;
+  min-height: 100vh;
+}
