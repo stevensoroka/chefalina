@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Menu Muse</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="App navigation">
+        <div class="brand">
+          <div class="brand-mark">M</div>
+          <div>
+            <p class="eyebrow">Trusted-source planning</p>
+            <h1>Menu Muse</h1>
+          </div>
+        </div>
+
+        <nav class="nav-pills" aria-label="Sections">
+          <button class="nav-pill active" data-section="planner">Week</button>
+          <button class="nav-pill" data-section="sources">Sources</button>
+          <button class="nav-pill" data-section="ingredients">Ingredients</button>
+          <button class="nav-pill" data-section="household">Household</button>
+          <button class="nav-pill" data-section="shopping">Shopping</button>
+        </nav>
+
+        <div class="mini-panel">
+          <p class="mini-label">This prototype</p>
+          <p>Uses curated recipe references and AI-style nutrition estimates. No invented recipes.</p>
+        </div>
+      </aside>
+
+      <main>
+        <section class="topbar">
+          <div class="topbar-copy">
+            <p class="eyebrow">Prototype v1</p>
+            <h2 id="heroTitle">Meal planning that starts with how you actually cook.</h2>
+            <p id="heroSubcopy">Tell the app whether you need one meal or a whole week, then let it search your trusted food world for the right fit.</p>
+          </div>
+          <button class="primary-button" id="generatePlan">Refresh plan</button>
+        </section>
+
+        <section id="planner" class="section active">
+          <article class="onboarding-board">
+            <div class="onboarding-copy">
+              <p class="eyebrow">First-time setup</p>
+              <h3>What are you trying to do, and who are we feeding?</h3>
+              <p>These answers shape the planning experience, the recipe suggestions, and whether things like baby-friendly notes or macros should appear at all.</p>
+            </div>
+
+            <div class="onboarding-grid">
+              <div class="setup-group">
+                <p class="setup-label">Plan type</p>
+                <div class="control-group" aria-label="Planning scope">
+                  <button class="choice-button active" data-choice-group="scope" data-choice-value="week">
+                    <span>Plan meals for the week</span>
+                    <small>Dinners, repeated breakfasts, lunches, leftovers, open nights</small>
+                  </button>
+                  <button class="choice-button" data-choice-group="scope" data-choice-value="meal">
+                    <span>Find one meal</span>
+                    <small>Tonight's answer based on your ingredients or trusted sources</small>
+                  </button>
+                </div>
+              </div>
+
+              <div class="setup-group">
+                <p class="setup-label">Recipe basis</p>
+                <div class="source-toggle" aria-label="Recommendation basis">
+                  <button class="toggle-choice" data-choice-group="basis" data-choice-value="ingredients">Use what I have</button>
+                  <button class="toggle-choice" data-choice-group="basis" data-choice-value="sources">Use my sources</button>
+                </div>
+              </div>
+
+              <div class="setup-group">
+                <p class="setup-label">Household</p>
+                <div class="mini-form-grid">
+                  <label>
+                    Adults
+                    <select id="adultCount">
+                      <option>1</option>
+                      <option selected>2</option>
+                      <option>3+</option>
+                    </select>
+                  </label>
+                  <label>
+                    Kids
+                    <select id="kidCount">
+                      <option selected>0</option>
+                      <option>1</option>
+                      <option>2+</option>
+                    </select>
+                  </label>
+                </div>
+              </div>
+
+              <div class="setup-group">
+                <p class="setup-label">Preferences</p>
+                <div class="preference-chips" id="preferenceChips">
+                  <button class="pref-chip active" data-pref="balanced">Balanced</button>
+                  <button class="pref-chip" data-pref="gluten-free">Gluten-free</button>
+                  <button class="pref-chip" data-pref="paleo">Paleo</button>
+                  <button class="pref-chip" data-pref="plant-based">Plant-based</button>
+                  <button class="pref-chip active" data-pref="high-protein">High protein</button>
+                  <button class="pref-chip active" data-pref="show-macros">Show macros</button>
+                  <button class="pref-chip active" data-pref="baby-friendly">Baby-friendly</button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="choice-board">
+            <div class="choice-copy">
+              <p class="eyebrow">Planning logic</p>
+              <h3 id="logicTitle">Search your food universe in the right way.</h3>
+              <p id="logicCopy">For v1, the job is meal planning. The app should understand your sources, search them intelligently, and match results to your household and preferences.</p>
+            </div>
+
+            <div class="choice-controls">
+              <div class="logic-list" id="logicList"></div>
+            </div>
+          </article>
+
+          <div class="planner-grid">
+            <article class="focus-panel">
+              <div class="panel-heading">
+                <div>
+                  <p class="eyebrow" id="planEyebrow">Weekly menu</p>
+                  <h3 id="planTitle">May 31 - Jun 6</h3>
+                </div>
+                <span class="status-dot" id="basisPill">CSA-aware</span>
+              </div>
+              <div class="week-list" id="weekList"></div>
+            </article>
+
+            <aside class="right-rail">
+              <article class="stats-panel">
+                <p class="eyebrow">Estimated daily average</p>
+                <div class="macro-ring">
+                  <span id="proteinStat">104g</span>
+                  <small>protein</small>
+                </div>
+                <div class="macro-grid">
+                  <div><strong id="calStat">1,820</strong><span>cal</span></div>
+                  <div><strong id="carbStat">164g</strong><span>carbs</span></div>
+                  <div><strong id="fatStat">71g</strong><span>fat</span></div>
+                </div>
+              </article>
+
+              <article class="baby-panel">
+                <p class="eyebrow">Baby variation</p>
+                <h3>9-month friendly notes</h3>
+                <ul id="babyNotes"></ul>
+              </article>
+            </aside>
+          </div>
+
+          <article class="recipe-strip">
+            <div class="panel-heading">
+              <div>
+                <p class="eyebrow">Recipe shortlist</p>
+                <h3 id="recipeHeading">Best matches for this week</h3>
+              </div>
+              <span id="matchCount">6 matches</span>
+            </div>
+            <div class="recipe-grid" id="recipeGrid"></div>
+          </article>
+        </section>
+
+        <section id="sources" class="section">
+          <article class="focus-panel">
+            <div class="panel-heading">
+              <div>
+                <p class="eyebrow">Source library</p>
+                <h3>Your trusted cooks, blogs, and books</h3>
+              </div>
+            </div>
+            <form class="source-form" id="sourceForm">
+              <label>
+                Source name
+                <input id="sourceName" type="text" placeholder="e.g. Smitten Kitchen, @creator, cookbook title">
+              </label>
+              <label>
+                Type
+                <select id="sourceType">
+                  <option>Food blog</option>
+                  <option>Instagram creator</option>
+                  <option>Cookbook</option>
+                  <option>Recipe link</option>
+                </select>
+              </label>
+              <label>
+                What you like about it
+                <input id="sourceFocus" type="text" placeholder="e.g. seasonal dinners, high-protein lunches">
+              </label>
+              <button class="primary-button" type="submit">Save</button>
+            </form>
+            <div class="source-grid" id="sourceGrid"></div>
+          </article>
+        </section>
+
+        <section id="ingredients" class="section">
+          <div class="two-column">
+            <article class="focus-panel">
+              <div class="panel-heading">
+                <div>
+                  <p class="eyebrow">What you have</p>
+                  <h3>CSA, market, pantry, fridge</h3>
+                </div>
+              </div>
+              <form class="ingredient-form" id="ingredientForm">
+                <label>
+                  Ingredient
+                  <input id="ingredientInput" name="ingredient" type="text" placeholder="e.g. zucchini, peaches, basil">
+                </label>
+                <label>
+                  Where from
+                  <select id="ingredientSource" name="source">
+                    <option>CSA box</option>
+                    <option>Farmer's market</option>
+                    <option>Pantry</option>
+                    <option>Fridge</option>
+                    <option>Freezer</option>
+                  </select>
+                </label>
+                <button class="primary-button" type="submit">Add</button>
+              </form>
+              <div class="chip-cloud" id="ingredientChips"></div>
+            </article>
+
+            <article class="focus-panel">
+              <p class="eyebrow">Ingredient match</p>
+              <h3>What the planner is prioritizing</h3>
+              <div class="priority-list" id="priorityList"></div>
+            </article>
+          </div>
+        </section>
+
+        <section id="household" class="section">
+          <div class="two-column">
+            <article class="focus-panel">
+              <p class="eyebrow">Preferences</p>
+              <h3>How the week should feel</h3>
+              <div class="control-stack">
+                <label>
+                  Planning mode
+                  <select id="modeSelect">
+                    <option>Balanced healthy</option>
+                    <option>Plant-forward</option>
+                    <option>Lower carb</option>
+                    <option>High protein</option>
+                  </select>
+                </label>
+                <label>
+                  Cooking energy
+                  <input id="energyRange" type="range" min="1" max="5" value="3">
+                </label>
+                <label class="toggle-row">
+                  <input id="leftoverToggle" type="checkbox" checked>
+                  Use dinners as next-day lunches
+                </label>
+                <label class="toggle-row">
+                  <input id="babyToggle" type="checkbox" checked>
+                  Include baby adaptations
+                </label>
+              </div>
+            </article>
+
+            <article class="focus-panel">
+              <p class="eyebrow">Household</p>
+              <h3>Planning assumptions</h3>
+              <div class="household-card">
+                <span>2 adults</span>
+                <span>1 baby, 9 months</span>
+                <span>Breakfast repeats welcome</span>
+                <span>Saturday dinner out</span>
+                <span>Macros are estimates</span>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section id="shopping" class="section">
+          <article class="focus-panel">
+            <div class="panel-heading">
+              <div>
+                <p class="eyebrow">Shopping list</p>
+                <h3>Missing items grouped for the store</h3>
+              </div>
+              <button class="secondary-button" id="copyList">Copy list</button>
+            </div>
+            <div class="shopping-grid" id="shoppingGrid"></div>
+          </article>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
