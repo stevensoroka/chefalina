@@ -1,7 +1,7 @@
 import sampleRecipes from "@/data/recipes/sample.json";
 import type { Recipe } from "@/lib/types";
 
-export const recipes: Recipe[] = sampleRecipes;
+export const recipes = sampleRecipes as Recipe[];
 
 export function getRecipeById(id: string): Recipe | undefined {
   return recipes.find((recipe) => recipe.id === id);

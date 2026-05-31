@@ -3,6 +3,11 @@ export type Recipe = {
   title: string;
   description: string;
   tags: string[];
+  cuisines?: string[];
+  supportsBaby?: boolean;
+  proteinGrams?: number;
+  sourceFamily?: string;
+  leftoverScore?: "low" | "medium" | "high";
   timeMinutes: number;
   servings: number;
   ingredients: string[];

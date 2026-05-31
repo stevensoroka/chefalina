@@ -42,17 +42,23 @@ type InspireButtonProps = {
   onInspire: () => void;
   recipe?: Recipe;
   action?: React.ReactNode;
+  title?: string;
+  description?: string;
 };
 
-export function InspireMe({ onInspire, recipe, action }: InspireButtonProps) {
+export function InspireMe({
+  onInspire,
+  recipe,
+  action,
+  title = "Need inspiration?",
+  description = "Pull a random meal from the starter library.",
+}: InspireButtonProps) {
   return (
     <div className="rounded-2xl border border-dashed border-terracotta/40 bg-white p-6">
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <h2 className="font-serif text-2xl font-semibold text-stone-900">Need inspiration?</h2>
-          <p className="mt-1 text-sm text-stone-600">
-            Pull a random meal from the starter library. AI comes later.
-          </p>
+          <h2 className="font-serif text-2xl font-semibold text-stone-900">{title}</h2>
+          <p className="mt-1 text-sm text-stone-600">{description}</p>
         </div>
         <button
           type="button"
